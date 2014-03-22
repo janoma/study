@@ -11,3 +11,6 @@
 *.lai
 *.la
 *.a
+
+# YouCompleteMe compiled config
+.ycm_extra_conf.pyc
