@@ -49,8 +49,10 @@ int main()
     // After this invalid assignment, the behavior is undefined.
     // In particular, a loop like
     //     while(it1 != s1.end()) { ++it1; }
-    // would be infinite.
-    // Here we to stop it with a counter.
+    // could be infinite.
+    // Here we to stop it with a counter,
+    // though in some systems it will fail with a segmentation fault after the
+    // second iteration.
     int count = 0;
     while (it1 != s1.end() && count++ < 10)
     {
