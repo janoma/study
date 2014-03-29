@@ -30,3 +30,9 @@ it's certainly worth being aware of it.
 The problem is related to iterators for two *different* sets of type
 `std::set<T, C1>` and `std::set<T, C2>`, where the compare objects are
 different.
+
+### Bit field
+An attempt to save as much memory as possible by storing a `bool` as a bit in
+some other numeric field, and making ad-hoc *getters* and *setters* so the
+change is transparent to the outside. The experiment was actually made with two
+`bool`s so the modifications to the code could be appreciated.
