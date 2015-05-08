@@ -12,5 +12,8 @@
 *.la
 *.a
 
+# Compiled executables (Windows)
+*.exe
+
 # YouCompleteMe compiled config
 .ycm_extra_conf.pyc
