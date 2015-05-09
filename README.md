@@ -1,15 +1,9 @@
-# study
+#Â study
 Snippets of code resulting of studying specific data structures, algorithms and
 general coding techniques.
 
 ## Requirements (sort of)
-Not really mandatory, but I use the following tools, and perhaps more and I'm
-forgetting. It's likely that I'm using the latest version of everything, though
-my code is probably compatible with previous versions as well.
-* [vim](http://www.vim.org/)
-* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-* [clang](http://clang.llvm.org/)
-* [boost](http://www.boost.org/)
+Generally speaking, I rely on GCC, and I usually add something from [boost](http://www.boost.org/) here and there. For sanity checks and comparisons, I also use [clang](http://clang.llvm.org/).
 
 ## List of snippets
 
@@ -36,3 +30,8 @@ An attempt to save as much memory as possible by storing a `bool` as a bit in
 some other numeric field, and making ad-hoc *getters* and *setters* so the
 change is transparent to the outside. The experiment was actually made with two
 `bool`s so the modifications to the code could be appreciated.
+
+### Cache
+A little experiment to show the effects of processor cache. Credit to [Igor
+Ostrovsky](http://igoro.com/archive/gallery-of-processor-cache-effects/) for his
+article on Processor Cache Effects.
