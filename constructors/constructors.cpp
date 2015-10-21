@@ -23,9 +23,8 @@ public:
     Point(std::initializer_list<int> coords)
     {
         assert(coords.size() == 2);
-        auto it = std::begin(coords);
-        x = *it++;
-        y = *it;
+        x = *std::begin(coords);
+        y = *std::rbegin(coords);
         std::cout << "Using initializer_list constructor " << *this << std::endl;
     }
 
@@ -79,6 +78,6 @@ int main()
     Point p3(p2);
     Point p4(std::move(p3));
     p2 = std::move(p4);
-    p2 = Point(10, 10);
-    p2 = {20, 20};
+    p2 = Point(10, 11);
+    p2 = {20, 21};
 }
