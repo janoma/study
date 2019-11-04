@@ -12,7 +12,7 @@ void measure(std::vector<int>& arr, size_t step)
 
     for (size_t i(0), size(arr.size()); i < size; i += step)
     {
-        arr[i]++;
+        ++arr[i];
     }
 }
 
