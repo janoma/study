@@ -45,5 +45,26 @@ TEST(PackTest, concatIntsAndChar) {
     ASSERT_EQ(concat(4, 2, 'c'), "42c");
 }
 
+TEST(PackTest, concatCharAndBool) {
+    // Requires std::boolalpha in the implementation
+    ASSERT_EQ(concat('c', true), "ctrue");
+}
+
+TEST(PackTest, concatReverseEmptyPack) {
+    ASSERT_EQ(concatReverse(), "");
+}
+
+TEST(PackTest, concatReverseOneElement) {
+    ASSERT_EQ(concatReverse(42), "42");
+}
+
+TEST(PackTest, concatReverseTwoElements) {
+    ASSERT_EQ(concatReverse(4, 'a'), "a4");
+}
+
+TEST(PackTest, concatReverseThreeElements) {
+    ASSERT_EQ(concatReverse(4, 'a', false), "falsea4");
+}
+
 } // namespace test
 } // namespace study
