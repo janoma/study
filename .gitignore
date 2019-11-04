@@ -17,3 +17,7 @@
 
 # YouCompleteMe compiled config
 .ycm_extra_conf.pyc
+
+# Buck
+.buckd
+buck-out
