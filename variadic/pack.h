@@ -26,15 +26,14 @@ std::string concat(Args&&... args) {
 }
 
 template <typename... Args, std::size_t... Is>
-decltype(auto)
-revertTupleImpl(std::tuple<Args...>&& t, std::index_sequence<Is...>) {
+auto revertTupleImpl(std::tuple<Args...>&& t, std::index_sequence<Is...>) {
     return std::forward_as_tuple(
         std::get<sizeof...(Args) - Is - 1>(t)...);
 }
 
 template <typename... Args>
-decltype(auto) revertTuple(std::tuple<Args...> t) {
-    return revertTupleImpl(std::forward<decltype(t)>(t),
+auto revertTuple(std::tuple<Args...> t) {
+    return revertTupleImpl(std::forward<std::tuple<Args...>>(t),
         std::make_index_sequence<sizeof...(Args)>());
 };
 

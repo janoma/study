@@ -66,5 +66,39 @@ TEST(PackTest, concatReverseThreeElements) {
     ASSERT_EQ(concatReverse(4, 'a', false), "falsea4");
 }
 
+// Struct to test perfect-forwarding of the concatenation functions.
+// No other constructor but the default should be called.
+template <char C>
+struct X {
+    explicit X(int value) : value_(value) {}
+
+    X(X<C> const&) = delete;
+
+    X(X<C>&&) = delete;
+
+    X<C>& operator=(X<C> const&) = delete;
+
+    X<C>& operator=(X<C>&&) = delete;
+
+    int value_;
+};
+
+template <char C>
+std::ostream& operator<<(std::ostream& out, X<C> const& x) {
+    return out << C << x.value_;
+}
+
+TEST(PackTest, concatPerfectForwarding) {
+    X<'A'> a(1);
+    X<'B'> b(2);
+    ASSERT_EQ(concat(a, b), "A1B2");
+}
+
+TEST(PackTest, concatReversePerfectForwarding) {
+    X<'A'> a(1);
+    X<'B'> b(2);
+    ASSERT_EQ(concatReverse(a, b), "B2A1");
+}
+
 } // namespace test
 } // namespace study
