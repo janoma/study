@@ -33,6 +33,7 @@ auto revertTupleImpl(std::tuple<Args...>&& t, std::index_sequence<Is...>) {
 
 template <typename... Args>
 auto revertTuple(std::tuple<Args...> t) {
+    static_assert(std::conjunction_v<std::is_reference<Args>...>);
     return revertTupleImpl(std::forward<std::tuple<Args...>>(t),
         std::make_index_sequence<sizeof...(Args)>());
 };
@@ -41,7 +42,7 @@ template <typename... Args>
 std::string concatReverse(Args&&... args) {
     std::stringstream stream;
     stream << std::boolalpha;
-    auto tuple = revertTuple(std::forward_as_tuple(args...));
+    auto tuple = revertTuple(std::tuple<Args&&...>(std::forward<Args>(args)...));
     std::apply([&](auto&&... element) {
         ((stream << element), ...); }, tuple);
     return stream.str();
