@@ -26,3 +26,5 @@ cxx_test(
         ':variadic_lib',
     ],
 )
+
+# vim: set expandtab:ts=4:sw=4:smartindent
