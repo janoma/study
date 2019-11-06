@@ -1,2 +1,2 @@
 [cxx]
-  gtest_dep = //third-party/googletest:gtest
+  gtest_dep = //third-party:gtest
