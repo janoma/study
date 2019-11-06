@@ -7,13 +7,12 @@
  */
 
 #include <algorithm>
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
-#include <stdlib.h>
 #include <vector>
 
 #include <boost/pending/disjoint_sets.hpp>
-#include <boost/pending/property.hpp>
 
 class Element
 {
