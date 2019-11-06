@@ -1,1 +1,1 @@
-Some examples aroud variadic templates and template metaprogramming.
+Some examples around variadic templates and template metaprogramming.
