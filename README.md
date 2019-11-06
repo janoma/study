@@ -1,9 +1,11 @@
-# Study
 Snippets of code resulting of studying specific data structures, algorithms and
 general coding techniques.
 
 ## Requirements (sort of)
-Generally speaking, I rely on GCC, and I usually add something from [boost](http://www.boost.org/) here and there. For sanity checks and comparisons, I also use [clang](http://clang.llvm.org/).
+[GCC](https://gcc.gnu.org/) supporting `C++17`. Trying to switch the older
+directories to [Buck](https://buck.build/). It uses
+[boost](http://www.boost.org/) here and there, and I'll try to add it as a
+submodule as well.
 
 ## List of snippets
 
