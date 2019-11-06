@@ -1,14 +1,2 @@
 [cxx]
   gtest_dep = //third-party:gtest
-
-# Use local GCC-9 version from Brew
-[cxx#mac]
-  cpp = /usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9
-  cc = /usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9
-  ld = /usr/local/Cellar/gcc/9.2.0_1/bin/g++-9
-  linker_platform = DARWIN
-  cxxpp = /usr/local/Cellar/gcc/9.2.0_1/bin/g++-9
-  cxx = /usr/local/Cellar/gcc/9.2.0_1/bin/g++-9
-  aspp = /usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9
-  ar = /usr/local/Cellar/gcc/9.2.0_1/bin/gcc-ar-9
-  archiver_platform = MACOS
