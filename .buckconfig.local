@@ -1,0 +1,7 @@
+[cxx]
+  ld = /usr/local/bin/g++-9
+  cxx = /usr/local/bin/g++-9
+  cxxpp = /usr/local/bin/g++-9
+  linker_platform = DARWIN
+  cxxppflags = -Wall -Wextra -Werror
+  cxxflags = -Wall -Wextra -Werror -Wno-sign-compare
