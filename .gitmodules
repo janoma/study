@@ -2,5 +2,5 @@
 	path = third-party/googletest
 	url = https://github.com/google/googletest.git
 [submodule "boost"]
-	path = boost
+	path = third-party/boost
 	url = https://github.com/boostorg/boost
