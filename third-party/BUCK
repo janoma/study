@@ -26,18 +26,4 @@ cxx_library(
     ],
 )
 
-# Use this if you only want to include the header only boost libraries and do
-# not want to compile everything else
-cxx_library(
-    name = 'boost_headers',
-    exported_headers = subdir_glob([
-        ('boost', '**/*.hpp'),
-        ('boost', '**/*.h'),
-        ('boost', '**/*.ipp'),
-    ]),
-    visibility = [
-        'PUBLIC',
-    ],
-)
-
 # vim: set expandtab:ts=4:sw=4:smartindent
