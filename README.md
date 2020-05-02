@@ -2,12 +2,15 @@ Snippets of code resulting of studying specific data structures, algorithms and
 general coding techniques.
 
 ## Requirements (sort of)
-[GCC](https://gcc.gnu.org/) supporting `C++17`. Trying to switch the older
-directories to [Buck](https://buck.build/). It uses
-[boost](http://www.boost.org/) here and there, and I'll try to add it as a
-submodule as well.
+[GCC](https://gcc.gnu.org/) supporting `C++17`. Using
+[Buck](https://buck.build/) to build, run and test.
 
 ## List of snippets
+
+### Constructor
+Clarifies which constructor is being called with different methods.
+
+    buck run //constructors:constructors
 
 ### Set
 A couple of examples showing a problem in how `std::set` is implemented by GNU's
@@ -19,7 +22,10 @@ The problem is related to iterators for two *different* sets of type
 `std::set<T, C1>` and `std::set<T, C2>`, where the compare objects are
 different.
 
-### Cache
-A little experiment to show the effects of processor cache. Credit to [Igor
-Ostrovsky](http://igoro.com/archive/gallery-of-processor-cache-effects/) for his
-article on Processor Cache Effects.
+    buck run //set:set_compare
+    buck run //set:set_iterator
+
+### Variadic
+Just trying to learn variadic templates. Some examples with parameter packs.
+
+    buck test //variadic:
