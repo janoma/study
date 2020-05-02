@@ -8,14 +8,12 @@ struct Lol
     bool operator<(Lol const&) const { return false; }
 };
 
-typedef std::set<Lol, std::less<Lol> > setLess;
-typedef std::set<Lol, std::greater<Lol> > setGreater;
-
 int main()
 {
-    setLess sl;
-    setGreater sg;
-    // This comparison should not even compile
-    std::cout << (sl.begin() == sg.begin()) << std::endl;
+    std::set<Lol, std::less<Lol>> sl;
+    std::set<Lol, std::greater<Lol>> sg;
+
+    // This comparison shouldn't even compile at all
+    std::cout << std::boolalpha << (sl.begin() == sg.begin()) << std::endl;
 }
 

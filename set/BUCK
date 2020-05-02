@@ -1,0 +1,13 @@
+cxx_binary(
+    name = 'set_compare',
+    srcs = [
+        'set_compare.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'set_iterator',
+    srcs = [
+        'set_iterator.cpp'
+    ],
+)
