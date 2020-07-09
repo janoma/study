@@ -69,34 +69,34 @@ TEST(PackTest, concatReverseThreeElements) {
 // Struct to test perfect-forwarding of the concatenation functions.
 // No other constructor but the default should be called.
 template <char C>
-struct X {
-    explicit X(int value) : value_(value) {}
+struct Forwardable {
+    explicit Forwardable(int value) : value_(value) {}
 
-    X(X<C> const&) = delete;
+    Forwardable(Forwardable<C> const&) = delete;
 
-    X(X<C>&&) = delete;
+    Forwardable(Forwardable<C>&&) = delete;
 
-    X<C>& operator=(X<C> const&) = delete;
+    Forwardable<C>& operator=(Forwardable<C> const&) = delete;
 
-    X<C>& operator=(X<C>&&) = delete;
+    Forwardable<C>& operator=(Forwardable<C>&&) = delete;
 
     int value_;
 };
 
 template <char C>
-std::ostream& operator<<(std::ostream& out, X<C> const& x) {
-    return out << C << x.value_;
+std::ostream& operator<<(std::ostream& out, Forwardable<C> const& fwd) {
+    return out << C << fwd.value_;
 }
 
 TEST(PackTest, concatPerfectForwarding) {
-    X<'A'> a(1);
-    X<'B'> b(2);
+    Forwardable<'A'> a(1);
+    Forwardable<'B'> b(2);
     ASSERT_EQ(concat(a, b), "A1B2");
 }
 
 TEST(PackTest, concatReversePerfectForwarding) {
-    X<'A'> a(1);
-    X<'B'> b(2);
+    Forwardable<'A'> a(1);
+    Forwardable<'B'> b(2);
     ASSERT_EQ(concatReverse(a, b), "B2A1");
 }
 
