@@ -21,3 +21,6 @@
 # Buck
 .buckd
 buck-out
+
+# Local buck configuration is a symbolic link for me
+.buckconfig.local
